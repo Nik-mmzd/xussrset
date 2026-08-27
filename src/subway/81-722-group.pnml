@@ -1,0 +1,17 @@
+// 81_722 group
+
+group_props0_HNMC(group_subway_81_722,
+  subway_81_722)
+
+item (FEAT_TRAINS, group_subway_81_722, 1329) {
+  property {
+    name: string(STR_NAME_SUBWAY_81_722_SERIES);
+    group_subway(2014, 10)
+  }
+  graphics {
+    group_CBs(group_subway_81_722)
+    colour_mapping: any_cc_colour;
+  }
+}
+
+long_name_template(group_subway_81_722, STR_LONGNAME_SUBWAY_81_722_SERIES)
