@@ -19,3 +19,4 @@ lang/_Missing.txt
 temp.tmp
 src/addon/emu/!fix_names.cmd
 config.bat
+venv/
