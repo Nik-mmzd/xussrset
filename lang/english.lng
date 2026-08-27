@@ -86,6 +86,13 @@ STR_PARAM_DISABLE_WAGON_DESC              :Hides cargo wagons from purchase list
 STR_PARAM_DISABLE_WAGON_GROUPS_DESC       :Hides groups in purchase window for cars and wagons
 STR_PARAM_DISABLE_WAGON_GROUPS_NAME       :Disable groups for cars and wagons
 STR_PARAM_DISABLE_WAGON_NAME              :Disable cargo wagons
+STR_PARAM_EXPERIMENTAL_ALL                :All
+STR_PARAM_EXPERIMENTAL_DESC               :Specifies availability of rare rolling stock{}- {WHITE}All{BLACK} keeps every vehicle available{}- {WHITE}Hide experimental{BLACK} removes prototypes and one-off vehicles{}- {WHITE}Hide all{BLACK} removes small-series vehicles as well{}
+STR_PARAM_EXPERIMENTAL_NAME               :Experimental and small-series vehicles
+STR_PARAM_EXPERIMENTAL_NONE               :Hide all
+STR_PARAM_EXPERIMENTAL_NO_PROTO           :Hide experimental
+STR_PARAM_EXTEND_AVAILABILITY_DESC        :Keeps rolling stock available for purchase for the given number of extra years (from 0 to 30, default 0)
+STR_PARAM_EXTEND_AVAILABILITY_NAME        :Extend vehicle availability
 STR_PARAM_GAUGE_BROAD                     :Broad
 STR_PARAM_GAUGE_DESC                      :Specifies gauge types. If ignored, broad acts as standard
 STR_PARAM_GAUGE_NAME                      :Gauge width

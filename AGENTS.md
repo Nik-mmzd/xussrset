@@ -29,9 +29,10 @@ Detailed documentation for agents lives in `docs/agent/`:
 
 Pipeline per GRF: `<name>.pnml → gcc -E (cpp) → <name>.nml → nmlc → build/<name>.grf`.
 
-Toolchain: `gcc`, `nmlc` (NML ~0.7.5, `pip install nml`), `git`, plus GNU
-`getopt` and GNU `sed` — **stock macOS BSD tools fail**; install
-`gnu-getopt`/`gnu-sed` and put them on PATH. CI
+Toolchain: `gcc`, `nmlc` (`pip install nml`, **NML >= 0.7.6** — the combined
+build overflows the D0xx string range on 0.7.5), `git`, plus GNU `getopt` and
+GNU `sed` — **stock macOS BSD tools fail**; install `gnu-getopt`/`gnu-sed` and
+put them on PATH. CI
 (`.github/workflows/release.yaml`) builds every push into nightly
 prereleases; tags become releases.
 

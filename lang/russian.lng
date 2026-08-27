@@ -85,6 +85,13 @@ STR_PARAM_DISABLE_WAGON_DESC              :Скрывает грузовые в�
 STR_PARAM_DISABLE_WAGON_GROUPS_DESC       :Скрывает группы вагонов в меню покупки ПС
 STR_PARAM_DISABLE_WAGON_GROUPS_NAME       :Отключить группы вагонов
 STR_PARAM_DISABLE_WAGON_NAME              :Отключить грузовые вагоны
+STR_PARAM_EXPERIMENTAL_ALL                :Весь
+STR_PARAM_EXPERIMENTAL_DESC               :Определяет доступность редкого подвижного состава{}- {WHITE}Весь{BLACK} оставляет доступным весь ПС{}- {WHITE}Отключить экспериментальный{BLACK} убирает опытные и единичные образцы{}- {WHITE}Отключить весь{BLACK} убирает также малосерийный ПС{}
+STR_PARAM_EXPERIMENTAL_NAME               :Экспериментальный и малосерийный ПС
+STR_PARAM_EXPERIMENTAL_NONE               :Отключить весь
+STR_PARAM_EXPERIMENTAL_NO_PROTO           :Отключить экспериментальный
+STR_PARAM_EXTEND_AVAILABILITY_DESC        :Продлевает доступность подвижного состава в меню покупки на указанное число лет (от 0 до 30, по умолчанию 0)
+STR_PARAM_EXTEND_AVAILABILITY_NAME        :Продлить доступность ПС
 STR_PARAM_GAUGE_BROAD                     :Широкая (1520 мм)
 STR_PARAM_GAUGE_DESC                      :Определяет ширину колеи. Если игнорируется, то допускает использование как поездами стандартной, так и широкой колеи
 STR_PARAM_GAUGE_NAME                      :Ширина колеи

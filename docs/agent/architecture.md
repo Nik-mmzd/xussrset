@@ -72,16 +72,32 @@ templates, then the module's `<mod>-list.pnml`, then a
 
 | Param | Names | Meaning |
 |---|---|---|
+| 0 | `extend_availability_years` | 0–30, default 0; added to `get_model_life()` |
 | 1 | `speed_penalty_percent` | 0–50, default 15 |
 | 2 | `disable_steamer`, `disable_diesel`, `disable_{ac,dc,acdc}electric`, `disable_dmu`, `disable_{ac,dc,acdc}emu`, `disable_subway`, `disable_wagon`, `disable_car` | bit flags, bits 0–11 |
 | 3 / 4 | `costs_multiplier` / `rcosts_multiplier` | 1–10000, default 100; applied inside the `purchase_menu()` / `cost_factor` macros |
 | 5 | `new_cargo_ageing` | 1–10000, default 100 |
-| 6 | `disable_groups`, `disable_wagon_groups`, `disable_icons`, `disable_long_names` | bit flags |
+| 6 | `disable_icons`, `disable_long_names`, `disable_groups`, `disable_wagon_groups` | bit flags |
+| 7 | `experimental_mode` | 1 all / 2 hide prototypes / 3 hide small series too |
+
+OpenTTD lists parameters in **declaration order**, not by number. The
+pre-existing options keep their historical declaration order; parameters added
+later (`extend_availability_years`, `experimental_mode`) are appended after
+them. The numbers themselves are frozen: changing one silently reassigns a
+setting in every savegame that already stores it.
 
 Every vehicle file ends with an `allow_<class>(name)` macro
 (`src/code-templates.pnml`) that re-opens the item and sets
 `climates_available: NO_CLIMATE` when the matching `disable_*` bit is set.
-Module headers declare only their own subset of these bits.
+Rare stock carries a second call next to it — `allow_prototype(name)` or
+`allow_small_series(name)` — which hides the vehicle once `experimental_mode`
+reaches 2 or 3 respectively. Module headers declare only their own subset of
+these bits; `emu` numbers its EMU bits 5–7 rather than 6–8, so bit positions
+are per-GRF.
+
+An `int` setting cannot share a parameter with anything else (NML:
+*"When packing multiple settings in one parameter only bool settings are
+allowed"*), which is why every non-boolean setting owns a whole param.
 
 ## Compatibility checks
 

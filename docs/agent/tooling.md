@@ -76,6 +76,18 @@ GRF using `versions/*.ver`, uploads `build/*.grf` as an artifact, publishes a
 8. `openttd-src/` and `jgrpp-src/` are local reference checkouts of OpenTTD /
    JGRPP, excluded via `.git/info/exclude` (not `.gitignore`). Never commit
    them; don't search them when working on the set itself.
+9. **The combined build needs nml >= 0.7.6.** On 0.7.5 `./compile.sh combined`
+   dies with `Unable to allocate ID for string, no more free IDs available
+   (maximum is 1024)`; OpenTTD/nml#326 moved most strings to the DCxx range.
+   Per-module builds still work on 0.7.5.
+10. **The `sed` pass splits lines on `; `.** A trailing comment after a
+   statement is fine — it just moves to its own line — but a `; ` *inside*
+   comment text strands the rest of the sentence on a line with no `//`, and
+   `nmlc` then reads it as code. Keep `; ` out of comment prose.
+11. **`clean-lng.pl` rewrites `lang/*.lng` with CRLF endings**, though the
+   committed files use LF. Convert them back before committing, otherwise
+   every language file shows up as fully rewritten. Its `*_usage` output is
+   also order-unstable — revert registries it churned without real changes.
 
 ## Design data in `docs/`
 

@@ -90,3 +90,4 @@ item (FEAT_TRAINS, fd20_pre, 828) {
 long_name_template(fd20_pre, STR_LONGNAME_FD20_PRE)
 models_default_cargo_template_cargo(fd20_pre)
 allow_steamer(fd20_pre)
+allow_prototype(fd20_pre)

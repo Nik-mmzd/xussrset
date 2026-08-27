@@ -1,5 +1,7 @@
  /// header
 
+
+experimental_mode = 1;
 grf
 {
                    grfid: "Meo\B0";
@@ -81,6 +83,18 @@ grf
       min_value: 1;
       max_value: 10000;
       def_value: 100;
+    }
+  }
+  param 0
+  {
+    extend_availability_years
+    {
+           type: int;
+           name: string(STR_PARAM_EXTEND_AVAILABILITY_NAME);
+           desc: string(STR_PARAM_EXTEND_AVAILABILITY_DESC);
+      min_value: 0;
+      max_value: 30;
+      def_value: 0;
     }
   }
 }

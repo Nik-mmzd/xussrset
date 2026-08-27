@@ -132,3 +132,4 @@ item (FEAT_TRAINS, chs2_25e0, 304) {
 long_name_template(chs2_25e0, STR_LONGNAME_CHS2_25E0)
 models_default_cargo_template_pass(chs2_25e0)
 allow_dcelectric(chs2_25e0)
+allow_prototype(chs2_25e0)

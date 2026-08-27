@@ -81,3 +81,4 @@ item (FEAT_TRAINS, ss_pre, 837) {
 long_name_template(ss_pre, STR_LONGNAME_SS_PRE)
 models_default_cargo_template_passcargo(ss_pre)
 allow_dcelectric(ss_pre)
+allow_prototype(ss_pre)

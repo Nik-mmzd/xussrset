@@ -347,6 +347,14 @@ if (disable_wagon) { item (FEAT_TRAINS, name) { property { climates_available: N
 #define allow_car(name)                                                                         \
 if (disable_car) { item (FEAT_TRAINS, name) { property { climates_available: NO_CLIMATE; } } }  \
 
+// rare stock, hidden by the experimental_mode ladder
+#define allow_prototype(name)                                                                              \
+if (experimental_mode >= 2) { item (FEAT_TRAINS, name) { property { climates_available: NO_CLIMATE; } } }  \
+
+// TODO: nothing is marked small-series yet, the list is still to be compiled
+#define allow_small_series(name)                                                                           \
+if (experimental_mode >= 3) { item (FEAT_TRAINS, name) { property { climates_available: NO_CLIMATE; } } }  \
+
 // Special cargo support
 #define use_yeti(name, cargo_allow_refit_list)                                                           \
 if (yeti_on) { item (FEAT_TRAINS, name) { property { cargo_allow_refit: [cargo_allow_refit_list]; } } }  \

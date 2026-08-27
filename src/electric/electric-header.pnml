@@ -110,4 +110,33 @@ grf
       def_value: 0;
     }
   }
+  param 0
+  {
+    extend_availability_years
+    {
+           type: int;
+           name: string(STR_PARAM_EXTEND_AVAILABILITY_NAME);
+           desc: string(STR_PARAM_EXTEND_AVAILABILITY_DESC);
+      min_value: 0;
+      max_value: 30;
+      def_value: 0;
+    }
+  }
+  param 7
+  {
+    experimental_mode
+    {
+           type: int;
+           name: string(STR_PARAM_EXPERIMENTAL_NAME);
+           desc: string(STR_PARAM_EXPERIMENTAL_DESC);
+      min_value: 1;
+      max_value: 3;
+      def_value: 1;
+          names: {
+                   1: string(STR_PARAM_EXPERIMENTAL_ALL);       // everything available
+                   2: string(STR_PARAM_EXPERIMENTAL_NO_PROTO);  // no prototypes
+                   3: string(STR_PARAM_EXPERIMENTAL_NONE);      // no prototypes, no small series
+      };
+    }
+  }
 }

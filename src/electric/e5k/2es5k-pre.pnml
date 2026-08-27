@@ -85,3 +85,4 @@ item (FEAT_TRAINS, _2es5k_pre, 863) {
 long_name_template(_2es5k_pre, STR_LONGNAME_2ES5K_PRE)
 models_default_cargo_template_cargo(_2es5k_pre)
 allow_acelectric(_2es5k_pre)
+allow_prototype(_2es5k_pre)

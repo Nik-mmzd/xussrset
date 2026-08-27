@@ -95,3 +95,4 @@ item (FEAT_TRAINS, er7_pre_h, 806) {
 
 long_name_template(er7_pre_h, STR_LONGNAME_ER7_PRE_H)
 allow_acemu(er7_pre_h)
+allow_prototype(er7_pre_h)

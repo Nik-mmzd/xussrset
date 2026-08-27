@@ -69,7 +69,8 @@ reducer = 5;
 min_model_life = 8;
 delta_age = 1;
 // модель
-#define get_model_life(x, y) y >= 2050 ? VEHICLE_NEVER_EXPIRES  : max(min_model_life, y - x + 1)
+// clamped to 254: 255 is VEHICLE_NEVER_EXPIRES, which the extension must never reach
+#define get_model_life(x, y) y >= 2050 ? VEHICLE_NEVER_EXPIRES  : min(254, max(min_model_life, y - x + 1) + extend_availability_years)
 
 // get_model_life(x, y) y >= 2050 ? VEHICLE_NEVER_EXPIRES                                                                            :  (y - x + 1 + min_model_life + reducer + reducer)
 // ((y - x + 1) > retire_early_default ? (y - x + 1) + min_model_life                                                                : min_model_life + retire_early_default)
