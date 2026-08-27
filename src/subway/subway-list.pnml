@@ -59,3 +59,7 @@
 #include "81-765.b_h.pnml"
 #include "81-766.b_m.pnml"
 #include "81-765-group.pnml"
+#include "81-775_h.pnml"
+#include "81-776_m.pnml"
+#include "81-777_c_use.pnml"
+#include "81-775-group.pnml"

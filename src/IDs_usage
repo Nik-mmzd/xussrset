@@ -1207,3 +1207,7 @@
 1330 -> subway_81_722_h (src/subway/81-722_h.pnml)
 1331 -> subway_81_723_m (src/subway/81-723_m.pnml)
 1332 -> subway_81_724_c (src/subway/81-724_c_use.pnml)
+1333 -> group_subway_81_775 (src/subway/81-775-group.pnml)
+1334 -> subway_81_775_h (src/subway/81-775_h.pnml)
+1335 -> subway_81_776_m (src/subway/81-776_m.pnml)
+1336 -> subway_81_777_c (src/subway/81-777_c_use.pnml)
