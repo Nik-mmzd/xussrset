@@ -1359,6 +1359,22 @@ STR_LONGNAME_ED9T_C            :{PUSH_COLOUR}{LTBLUE}Прицепной ваго
 STR_LONGNAME_ED9T_H            :{PUSH_COLOUR}{YELLOW}Головной вагон{POP_COLOUR} ЭД9Т / 62-307 «Камаз» (ЭМВПС)
 STR_LONGNAME_ED9T_M            :{PUSH_COLOUR}{DKGREEN}Прицепной моторный вагон{POP_COLOUR} ЭД9Т / 62-306 «Камаз» (ЭМВПС)
 STR_LONGNAME_ED9_SERIES        :Серия ЭД9 / ЭП3 (ЭМВПС)
+STR_LONGNAME_EG2TV_0_C     :{PUSH_COLOUR}{LTBLUE}Прицепной вагон{POP_COLOUR} ЭГ2Тв / 62-4499.01 «Иволга» (ЭМВПС)
+STR_LONGNAME_EG2TV_0_H     :{PUSH_COLOUR}{YELLOW}Головной вагон{POP_COLOUR} ЭГ2Тв / 62-4497.01 «Иволга» (ЭМВПС)
+STR_LONGNAME_EG2TV_0_M     :{PUSH_COLOUR}{DKGREEN}Прицепной моторный вагон{POP_COLOUR} с токоприёмником ЭГ2Тв / 62-4498.01 «Иволга» (ЭМВПС)
+STR_LONGNAME_EG2TV_1_C     :{PUSH_COLOUR}{LTBLUE}Прицепной вагон{POP_COLOUR} ЭГ2Тв / 62-4499.05 «Иволга 1.0» (ЭМВПС)
+STR_LONGNAME_EG2TV_1_H     :{PUSH_COLOUR}{YELLOW}Головной вагон{POP_COLOUR} ЭГ2Тв / 62-4497.05 «Иволга 1.0» (ЭМВПС)
+STR_LONGNAME_EG2TV_1_M     :{PUSH_COLOUR}{DKGREEN}Прицепной моторный вагон{POP_COLOUR} с токоприёмником ЭГ2Тв / 62-4498.05 «Иволга 1.0» (ЭМВПС)
+STR_LONGNAME_EG2TV_2_C     :{PUSH_COLOUR}{LTBLUE}Прицепной вагон{POP_COLOUR} ЭГ2Тв / 62-4499.14 «Иволга 2.0» (ЭМВПС)
+STR_LONGNAME_EG2TV_2_H     :{PUSH_COLOUR}{YELLOW}Головной вагон{POP_COLOUR} ЭГ2Тв / 62-4497.14 «Иволга 2.0» (ЭМВПС)
+STR_LONGNAME_EG2TV_2_M     :{PUSH_COLOUR}{DKGREEN}Прицепной моторный вагон{POP_COLOUR} с токоприёмником ЭГ2Тв / 62-4498.14 «Иволга 2.0» (ЭМВПС)
+STR_LONGNAME_EG2TV_3_C     :{PUSH_COLOUR}{LTBLUE}Прицепной вагон{POP_COLOUR} ЭГЭ2Тв / 62-4558 «Иволга 3.0» (ЭМВПС)
+STR_LONGNAME_EG2TV_3_H     :{PUSH_COLOUR}{YELLOW}Головной вагон{POP_COLOUR} ЭГЭ2Тв / 62-4557 «Иволга 3.0» (ЭМВПС)
+STR_LONGNAME_EG2TV_3_M     :{PUSH_COLOUR}{DKGREEN}Прицепной моторный вагон{POP_COLOUR} с токоприёмником ЭГЭ2Тв / 62-4560 «Иволга 3.0» (ЭМВПС)
+STR_LONGNAME_EG2TV_4_C     :{PUSH_COLOUR}{LTBLUE}Прицепной вагон{POP_COLOUR} ЭГЭ2Тв / 62-4558.01 «Иволга 4.0» (ЭМВПС)
+STR_LONGNAME_EG2TV_4_H     :{PUSH_COLOUR}{YELLOW}Головной вагон{POP_COLOUR} ЭГЭ2Тв / 62-4557.03 «Иволга 4.0» (ЭМВПС)
+STR_LONGNAME_EG2TV_4_M     :{PUSH_COLOUR}{DKGREEN}Прицепной моторный вагон{POP_COLOUR} с токоприёмником ЭГЭ2Тв / 62-4560.02 «Иволга 4.0» (ЭМВПС)
+STR_LONGNAME_EG2TV_SERIES  :Серия ЭГ2Тв / ЭГЭ2Тв «Иволга» (ЭМВПС)
 STR_LONGNAME_EKR1              :Электропоезд ЭКр1 «Тарпан» (ЭМВПС)
 STR_LONGNAME_EM167             :Электросекция ЭМ167 (ЭМВПС)
 STR_LONGNAME_EMU_S_SERIES      :Серия С (ЭМВПС)
@@ -1527,6 +1543,27 @@ STR_NAME_ED9T_C                :ЭД9Т / {PUSH_COLOUR}{LTBLUE}62-308{POP_COLOUR
 STR_NAME_ED9T_H                :ЭД9Т / {PUSH_COLOUR}{YELLOW}62-307{POP_COLOUR}
 STR_NAME_ED9T_M                :ЭД9Т / {PUSH_COLOUR}{DKGREEN}62-306{POP_COLOUR}
 STR_NAME_ED9_SERIES            :Серия ЭД9 / ЭП3
+STR_NAME_EG2TV_0           :ЭГ2Тв «Иволга»
+STR_NAME_EG2TV_0_C         :ЭГ2Тв / {PUSH_COLOUR}{LTBLUE}62-4499.01{POP_COLOUR}
+STR_NAME_EG2TV_0_H         :ЭГ2Тв / {PUSH_COLOUR}{YELLOW}62-4497.01{POP_COLOUR}
+STR_NAME_EG2TV_0_M         :ЭГ2Тв / {PUSH_COLOUR}{DKGREEN}62-4498.01{POP_COLOUR}
+STR_NAME_EG2TV_1           :ЭГ2Тв «Иволга 1.0»
+STR_NAME_EG2TV_1_C         :ЭГ2Тв / {PUSH_COLOUR}{LTBLUE}62-4499.05{POP_COLOUR}
+STR_NAME_EG2TV_1_H         :ЭГ2Тв / {PUSH_COLOUR}{YELLOW}62-4497.05{POP_COLOUR}
+STR_NAME_EG2TV_1_M         :ЭГ2Тв / {PUSH_COLOUR}{DKGREEN}62-4498.05{POP_COLOUR}
+STR_NAME_EG2TV_2           :ЭГ2Тв «Иволга 2.0»
+STR_NAME_EG2TV_2_C         :ЭГ2Тв / {PUSH_COLOUR}{LTBLUE}62-4499.14{POP_COLOUR}
+STR_NAME_EG2TV_2_H         :ЭГ2Тв / {PUSH_COLOUR}{YELLOW}62-4497.14{POP_COLOUR}
+STR_NAME_EG2TV_2_M         :ЭГ2Тв / {PUSH_COLOUR}{DKGREEN}62-4498.14{POP_COLOUR}
+STR_NAME_EG2TV_3           :ЭГЭ2Тв «Иволга 3.0»
+STR_NAME_EG2TV_3_C         :ЭГЭ2Тв / {PUSH_COLOUR}{LTBLUE}62-4558{POP_COLOUR}
+STR_NAME_EG2TV_3_H         :ЭГЭ2Тв / {PUSH_COLOUR}{YELLOW}62-4557{POP_COLOUR}
+STR_NAME_EG2TV_3_M         :ЭГЭ2Тв / {PUSH_COLOUR}{DKGREEN}62-4560{POP_COLOUR}
+STR_NAME_EG2TV_4           :ЭГЭ2Тв «Иволга 4.0»
+STR_NAME_EG2TV_4_C         :ЭГЭ2Тв / {PUSH_COLOUR}{LTBLUE}62-4558.01{POP_COLOUR}
+STR_NAME_EG2TV_4_H         :ЭГЭ2Тв / {PUSH_COLOUR}{YELLOW}62-4557.03{POP_COLOUR}
+STR_NAME_EG2TV_4_M         :ЭГЭ2Тв / {PUSH_COLOUR}{DKGREEN}62-4560.02{POP_COLOUR}
+STR_NAME_EG2TV_SERIES      :Серия ЭГ2Тв / ЭГЭ2Тв «Иволга»
 STR_NAME_EKR1                  :ЭКр1
 STR_NAME_EM167                 :ЭМ167
 STR_NAME_EMU_S_SERIES          :Серия C
@@ -2436,6 +2473,8 @@ STR_SECTIONS_EMU_AM6_8_10_12_14         :6, 8, 10, 12 или 14 вагонов (
 STR_SECTIONS_EMU_EP2D                   :2 - 12 вагонов ({PUSH_COLOUR}{YELLOW}Г{DKGREEN}МтМт{YELLOW}Г{POP_COLOUR}{PUSH_COLOUR}, {YELLOW}Г{DKGREEN}Мт{LTBLUE}П{DKGREEN}Мт{YELLOW}Г{POP_COLOUR}{PUSH_COLOUR}, {YELLOW}Г{DKGREEN}Мт{LTBLUE}П{DKGREEN}МтМт{YELLOW}Г{POP_COLOUR}{PUSH_COLOUR}, {YELLOW}Г{DKGREEN}Мт{LTBLUE}ПП{DKGREEN}МтМт{YELLOW}Г{POP_COLOUR}{PUSH_COLOUR}, {YELLOW}Г{DKGREEN}Мт{LTBLUE}П{DKGREEN}МтМт{LTBLUE}П{DKGREEN}Мт{YELLOW}Г{POP_COLOUR}{PUSH_COLOUR}, {YELLOW}Г{DKGREEN}Мт{LTBLUE}П{DKGREEN}МтМт{LTBLUE}ПП{DKGREEN}Мт{YELLOW}Г{POP_COLOUR}{PUSH_COLOUR}, {YELLOW}Г{DKGREEN}Мт{LTBLUE}П{DKGREEN}Мт{LTBLUE}П{DKGREEN}МтМт{LTBLUE}П{DKGREEN}Мт{YELLOW}Г{POP_COLOUR}{PUSH_COLOUR}, {YELLOW}Г{DKGREEN}Мт{LTBLUE}П{DKGREEN}Мт{LTBLUE}П{DKGREEN}МтМт{LTBLUE}ПП{DKGREEN}Мт{YELLOW}Г{POP_COLOUR}{PUSH_COLOUR}, {YELLOW}Г{DKGREEN}Мт{LTBLUE}П{DKGREEN}Мт{LTBLUE}П{DKGREEN}МтМт{LTBLUE}П{DKGREEN}Мт{LTBLUE}П{DKGREEN}Мт{YELLOW}Г{POP_COLOUR}{PUSH_COLOUR}, {YELLOW}Г{RED}Гмт{POP_COLOUR}{PUSH_COLOUR}, {YELLOW}Г{DKGREEN}Мт{RED}Гмт {POP_COLOUR}{PUSH_COLOUR}или {YELLOW}Г{DKGREEN}Мт{LTBLUE}П{RED}Гмт{POP_COLOUR}{PUSH_COLOUR}), можно присоединять ещё один поезд
 STR_SECTIONS_EMU_ES2G                   :5 - 7, 10, 12 вагонов ({PUSH_COLOUR}{CREAM}Гм{BLUE}Пт{LTBLUE}П{BLUE}Пт{CREAM}Гм{POP_COLOUR}{PUSH_COLOUR}, {CREAM}Гм{BLUE}Пт{LTBLUE}ПП{BLUE}Пт{CREAM}Гм{POP_COLOUR}{PUSH_COLOUR}, {CREAM}Гм{BLUE}Пт{LTBLUE}П{BLUE}Пт{GREEN}М{BLUE}Пт{CREAM}Гм{POP_COLOUR}{PUSH_COLOUR}, {CREAM}Гм{BLUE}Пт{GREEN}М{BLUE}Пт{LTBLUE}ПП{BLUE}Пт{GREEN}М{BLUE}Пт{CREAM}Гм{POP_COLOUR}{PUSH_COLOUR}, {CREAM}Гм{BLUE}Пт{GREEN}М{BLUE}Пт{LTBLUE}П{GREEN}М{BLUE}Пт{LTBLUE}П{BLUE}Пт{GREEN}М{BLUE}Пт{CREAM}Гм{POP_COLOUR}{PUSH_COLOUR}), можно присоединять ещё один поезд, 12 вагонов максимум
 STR_SECTIONS_EMU_ESH2                   :4 - 6 вагонов ({PUSH_COLOUR}{ORANGE}Гт{GREEN}М{GREEN}М{ORANGE}Гт{POP_COLOUR}{PUSH_COLOUR}, {ORANGE}Гт{GREEN}М{GREEN}Мб{ORANGE}Гт{POP_COLOUR}{PUSH_COLOUR}, {ORANGE}Гт{GREEN}М{LTBLUE}П{GREEN}М{ORANGE}Гт{POP_COLOUR}{PUSH_COLOUR}, {ORANGE}Гт{GREEN}М{LTBLUE}ПП{GREEN}М{ORANGE}Гт{POP_COLOUR}{PUSH_COLOUR}), можно присоединять ещё один или два поезда
+STR_SECTIONS_EMU_IVOLGA_4_12            :4 - 12 вагонов ({PUSH_COLOUR}{YELLOW}Г{WHITE}-[2..10 {DKGREEN}М{WHITE}/{LTBLUE}П{WHITE}]-{YELLOW}Г{POP_COLOUR}{PUSH_COLOUR}), моторных не меньше двух и не меньше, чем прицепных, можно присоединить второй состав
+STR_SECTIONS_EMU_IVOLGA_5  :5 вагонов ({PUSH_COLOUR}{YELLOW}Г{DKGREEN}МММ{YELLOW}Г{POP_COLOUR}{PUSH_COLOUR} или {YELLOW}Г{DKGREEN}ММ{LTBLUE}П{YELLOW}Г{POP_COLOUR}{PUSH_COLOUR}), можно присоединить второй состав
 STR_SECTIONS_EMU_S                      :1 - 3 вагонов ({PUSH_COLOUR}{RED}Гмт{POP_COLOUR}{PUSH_COLOUR}, {YELLOW}Г{RED}Гмт{POP_COLOUR}{PUSH_COLOUR}, {YELLOW}Г{RED}Гмт{YELLOW}Г{POP_COLOUR}{PUSH_COLOUR}), можно присоединять ещё один или два поезда ({PUSH_COLOUR}{WHITE}{STRING}{POP_COLOUR}{PUSH_COLOUR})
 STR_SECTIONS_EMU_SR3                    :1 - 6 вагонов ({PUSH_COLOUR}{RED}Гмт{POP_COLOUR}{PUSH_COLOUR}, {YELLOW}Г{RED}Гмт{POP_COLOUR}{PUSH_COLOUR}, {YELLOW}Г{RED}Гмт{YELLOW}Г{POP_COLOUR}{PUSH_COLOUR}, {RED}Гмт{LTBLUE}П{RED}Гмт{POP_COLOUR}{PUSH_COLOUR}, {YELLOW}Г{RED}Гмт{LTBLUE}П{RED}Гмт{POP_COLOUR}{PUSH_COLOUR}, {YELLOW}Г{RED}Гмт{LTBLUE}П{RED}Гмт{YELLOW}Г{POP_COLOUR}{PUSH_COLOUR}, {RED}Гмт{LTBLUE}ПП{RED}Гмт{POP_COLOUR}{PUSH_COLOUR}, {YELLOW}Г{RED}Гмт{LTBLUE}ПП{RED}Гмт{POP_COLOUR}{PUSH_COLOUR}, {YELLOW}Г{RED}Гмт{LTBLUE}ПП{RED}Гмт{YELLOW}Г{POP_COLOUR}{PUSH_COLOUR}), можно присоединять ещё один или два поезда, 3 моторных вагона максимум
 STR_SECTIONS_MU_3_8                     :3 - 8 вагонов
@@ -3096,6 +3135,8 @@ STR_REFIT_LV_EAST                        :, «Восток»
 STR_REFIT_LV_EAST_LONG                   :, «Восток»
 STR_REFIT_LV_ENISEI                      :, «Енисей»
 STR_REFIT_LV_EXPRESS_MSK_SPB             :, «Экспресс Мск-СПб»
+STR_REFIT_LV_JUBILEE_059       :, Юбилейный (059)
+STR_REFIT_LV_JUBILEE_059_MCD             :, Юбилейный (059) с логотипом МЦД
 STR_REFIT_LV_KAMA                        :, «Кама»
 STR_REFIT_LV_KAVKAZ                      :, «Кавказ»
 STR_REFIT_LV_KUBAN                       :, «Кубань»
@@ -3105,6 +3146,8 @@ STR_REFIT_LV_LDZ_STAR_LONG               :, «Звезда»
 STR_REFIT_LV_LEO_TOLSTOY                 :, «Лев Толстой»
 STR_REFIT_LV_LETUVA                      :, «Литва»
 STR_REFIT_LV_LETUVA_LONG                 :, «Литва»
+STR_REFIT_LV_MCD               :, МЦД
+STR_REFIT_LV_MOSCOW_TRANSPORT  :, «Московский транспорт»
 STR_REFIT_LV_NEMAN                       :, «Неман»
 STR_REFIT_LV_NEVSKY_EXPRESS              :, «Невский экспресс»
 STR_REFIT_LV_NIKHOLAS_EXPRESS            :, «Николаевский экспресс»

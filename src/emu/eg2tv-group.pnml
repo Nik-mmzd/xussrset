@@ -1,0 +1,21 @@
+// EG2Tv group
+
+group_props4_HNMC(group_eg2tv,
+  eg2tv_0,
+  eg2tv_1, 2018,
+  eg2tv_2, 2019,
+  eg2tv_3, 2022,
+  eg2tv_4, 2024)
+
+item (FEAT_TRAINS, group_eg2tv, 1341) {
+  property {
+    name: string(STR_NAME_EG2TV_SERIES);
+    group_electric(dc, 2014, 10)
+  }
+  graphics {
+    group_CBs(group_eg2tv)
+    colour_mapping: any_cc_colour;
+  }
+}
+
+long_name_template(group_eg2tv, STR_LONGNAME_EG2TV_SERIES)

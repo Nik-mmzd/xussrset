@@ -1,0 +1,151 @@
+// eg2tv_4
+
+#define PROP_eg2tv_4_h_num  2
+#define PROP_eg2tv_4_n_num  0
+#define PROP_eg2tv_4_m_num  6
+#define PROP_eg2tv_4_c_num  3
+
+#define PROP_eg2tv_4_h_CF  2 * 40
+#define PROP_eg2tv_4_h_RC  290
+#define PROP_eg2tv_4_h_SD  160
+#define PROP_eg2tv_4_h_WT  59
+#define PROP_eg2tv_4_h_TE  0
+#define PROP_eg2tv_4_h_PR  0
+#define PROP_eg2tv_4_h_CC  35
+
+#define PROP_eg2tv_4_n_CF  0
+#define PROP_eg2tv_4_n_RC  0
+#define PROP_eg2tv_4_n_SD  0
+#define PROP_eg2tv_4_n_WT  0
+#define PROP_eg2tv_4_n_TE  0
+#define PROP_eg2tv_4_n_PR  0
+#define PROP_eg2tv_4_n_CC  0
+
+#define IMAGEFILE  "src/emu/eg2tv_4_h.png"
+purchase_sprites_with_icon(eg2tv_4_h, 18, 0, 3dc)
+MU_head_middle_sp_sprites(13, eg2tv_4_h_v1_mu, 32, 40)
+MU_head_middle_sp_sprites(13, eg2tv_4_h_v2_mu, 32, 308)
+#undef IMAGEFILE
+map_sprites(eg2tv_4_purchase_sprites, eg2tv_4_h_purchase_sprites)
+
+MU_power_template2(eg2tv_4_h_v1, eg2tv_4_h, eg2tv_3_h)
+MU_power_template2(eg2tv_4_h_v2, eg2tv_4_h, eg2tv_3_h)
+
+// The head sheet holds two paint blocks against four on the intermediate cars, so the
+// plain and the MCD-marked variant of each paint share a head block.
+switch (FEAT_TRAINS, SELF, eg2tv_4_h_sprites_left,
+  cargo_subtype)
+{
+  0: eg2tv_4_h_v1_sprites_left;
+  1: eg2tv_4_h_v1_sprites_left;
+  2: eg2tv_4_h_v2_sprites_left;
+  3: eg2tv_4_h_v2_sprites_left;
+  align_13_sprites;
+}
+
+switch (FEAT_TRAINS, SELF, eg2tv_4_h_sprites_right,
+  cargo_subtype)
+{
+  0: eg2tv_4_h_v1_sprites_right;
+  1: eg2tv_4_h_v1_sprites_right;
+  2: eg2tv_4_h_v2_sprites_right;
+  3: eg2tv_4_h_v2_sprites_right;
+  align_13_sprites;
+}
+
+engine_direction_template6m4(eg2tv_4_h, eg2tv_4_h, eg2tv_3_h, eg2tv_4_m, eg2tv_3_m, eg2tv_4_c, eg2tv_3_c)
+MU_attach_wagon_icon_template2_only2(eg2tv_4_h, eg2tv_4_h, eg2tv_3_h, type_head, type_car_motor_pant_add_mandatory, type_head_add_optional, )
+long_vehicle_advanced(eg2tv_4_h, eg2tv_4_h_sprites_start_sp)
+
+EMU_4_12_free_can_attach_wagon_template2set(eg2tv_4, eg2tv_4_h, eg2tv_4_m, eg2tv_4_c, eg2tv_3_h, eg2tv_3_m, eg2tv_3_c)
+EMU_count_calculation_template2set(eg2tv_4, eg2tv_4_h, eg2tv_4_m, eg2tv_4_c, eg2tv_3_h, eg2tv_3_m, eg2tv_3_c)
+
+switch (FEAT_TRAINS, SELF, eg2tv_4_can_attach_wagon1,
+  vehicle_type_id)
+{
+  eg2tv_4_h: eg2tv_4_can_attach_wagon_template;
+  eg2tv_4_m: eg2tv_4_can_attach_wagon_template;
+  eg2tv_4_c: eg2tv_4_can_attach_wagon_template;
+  eg2tv_3_h: eg2tv_4_can_attach_wagon_template;
+  eg2tv_3_m: eg2tv_4_can_attach_wagon_template;
+  eg2tv_3_c: eg2tv_4_can_attach_wagon_template;
+  return string(STR_CAN_ATTACH_SAME_MU_ONLY);
+}
+
+switch (FEAT_TRAINS, PARENT, eg2tv_4_can_attach_wagon,
+  count_veh_id(eg2tv_4_h) + count_veh_id(eg2tv_3_h))
+{
+  0: return string(STR_CAN_ATTACH_HEAD_ONLY);
+  1: eg2tv_4_can_attach_wagon1;
+  2: eg2tv_4_can_attach_wagon_head;
+  3: eg2tv_4_can_attach_wagon1;
+  return string(STR_CAN_ATTACH_NO_AFTER_REAR_HEAD);
+}
+
+switch (FEAT_TRAINS, PARENT, eg2tv_4_h_start_stop,
+  count_veh_id(eg2tv_4_h) + count_veh_id(eg2tv_3_h))
+{
+  2: return CB_RESULT_NO_TEXT;
+  4: return CB_RESULT_NO_TEXT;
+  return string(STR_START_STOP_NUMBER_OF_HEAD_CAR_MUST_BE_EVEN);
+}
+
+livery_template_alt30(eg2tv_4, STR_REFIT_FACTORY, STR_REFIT_LV_MCD, STR_REFIT_LV_JUBILEE_059, STR_REFIT_LV_JUBILEE_059_MCD)
+engine_capacity_MU2(eg2tv_4_h, PROP_eg2tv_4_h_CC, eg2tv_4_h, eg2tv_3_h)
+
+RC_head_check2(eg2tv_4_h, eg2tv_4_h, eg2tv_3_h)
+switch (FEAT_TRAINS, SELF, eg2tv_4_h_running_cost_factor,
+  [ STORE_TEMP(166, 0),  // Моторы
+    STORE_TEMP(23, 1),   // Бригада
+    STORE_TEMP(58, 2),   // Износ
+    STORE_TEMP(0, 3),    // Сопровождение
+    STORE_TEMP(40, 4),   // ТО
+    STORE_TEMP(3, 5),    // Сертификация
+
+    STORE_TEMP(PROP_eg2tv_4_h_SD, 6),                                   // Скорость
+    STORE_TEMP(round(PROP_eg2tv_4_h_WT), 7),                            // Тара
+    STORE_TEMP(round(PROP_eg2tv_4_h_WT + PROP_eg2tv_4_h_CC / 16), 8)])  // Максимальная масса
+{ eg2tv_4_h_check_running_cost_factor; }                                // 290
+
+name_in_group_subgroup(eg2tv_4_h,
+  string(STR_NAME_IN_GROUP, string(STR_NAME_EG2TV_SERIES), string(STR_NAME_EG2TV_4_H)),
+  string(STR_NAME_IN_GROUP, string(STR_NAME_EG2TV_SERIES), string(STR_LONGNAME_EG2TV_4_H)),
+  string(STR_NAME_EG2TV_4))
+
+hint_MU_noto(eg2tv_4_h,
+  calc_loading(PROP_eg2tv_4_h_CC / (2 * WIDERST_D_DOOR)),
+  get_CAP_in_cb(CAP_00075_ACCELERATED),
+  STR_PURCHASE_HINT_ENGINE_TYPE_EMU_H_DC,
+  STR_SECTIONS_EMU_IVOLGA_4_12,
+  2024,
+  fact_tver())
+map_sprites(eg2tv_4_additional_text, eg2tv_4_h_additional_text)
+
+item (FEAT_TRAINS, eg2tv_4_h, 1354) {
+  property {
+    name: string(STR_NAME_EG2TV_4_H);
+    vehicle_dates(2024, 2050, 40, 10, 8, PROP_eg2tv_4_h_CF)
+    vehicle_emu_c(dc, PROP_eg2tv_4_h_WT, PROP_eg2tv_4_h_CC, 2 * WIDERST_D_DOOR, )
+    vehicle_group(group_eg2tv)
+  }
+  graphics {
+    purchase_menu(PROP_eg2tv_4_h_CF, PROP_eg2tv_4_h_RC, PROP_eg2tv_4_h_SD, PROP_eg2tv_4_h_WT, PROP_eg2tv_4_h_TE, PROP_eg2tv_4_h_PR, PROP_eg2tv_4_h_CC)
+        additional_text: eg2tv_4_h_additional_text;
+       articulated_part: articulated_part_dummy5;
+       can_attach_wagon: eg2tv_4_can_attach_wagon;
+       cargo_age_period: return get_CAP_in_cb(CAP_00075_ACCELERATED);
+         cargo_capacity: eg2tv_4_h_cargo_capacity;
+     cargo_subtype_text: eg2tv_4_cargo_subtype_text;
+         colour_mapping: any_cc_colour;
+                default: eg2tv_4_h_sprites;
+                   name: eg2tv_4_h_name;
+                  power: return 0;
+               purchase: eg2tv_4_h_purchase_sprites;
+    running_cost_factor: eg2tv_4_h_running_cost_factor;
+                  speed: return PROP_eg2tv_4_h_SD;
+             start_stop: eg2tv_4_h_start_stop;
+  }
+}
+
+long_name_template(eg2tv_4_h, STR_LONGNAME_EG2TV_4_H)
+allow_dcemu(eg2tv_4_h)

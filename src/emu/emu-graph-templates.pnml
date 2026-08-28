@@ -134,6 +134,15 @@ switch (FEAT_TRAINS, PARENT, name##_next_can_attach_wagon_max, LOAD_TEMP(5))    
   0xB2B5: type_head_add_mandatory;                /* Г-М-П-М-П-М-М-П-М-П-М-(Г) */  \
   dummy_sprites_big; }                                                             \
 
+#define EMU_4_12_free_attach_wagon_icon_template(name)                             \
+switch (FEAT_TRAINS, PARENT, name##_next_can_attach_wagon_max,                     \
+  EMU_4_12_free_choice())                                                          \
+{ 7: type_head_car_motor_pant_car_add_mandatory;  /* Г/М/П */                      \
+  4: type_head_add_mandatory;                     /* Г     */                      \
+  3: type_car_motor_pant_car_add_mandatory;       /* М/П   */                      \
+  2: type_car_motor_pant_add_mandatory;           /* М     */                      \
+  dummy_sprites_big; }                                                             \
+
 #define EMU_4681012_attach_wagon_icon_template(name)                               \
 switch (FEAT_TRAINS, PARENT, name##_next_can_attach_wagon_max, LOAD_TEMP(5))       \
 { 0x1000: type_car_motor_pant_add_mandatory;      /* Г-(М)                     */  \

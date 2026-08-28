@@ -1,0 +1,107 @@
+// eg2tv_4
+
+#define PROP_eg2tv_4_c_CF  2 * 33
+#define PROP_eg2tv_4_c_RC  176
+#define PROP_eg2tv_4_c_SD  160
+#define PROP_eg2tv_4_c_WT  51
+#define PROP_eg2tv_4_c_TE  0
+#define PROP_eg2tv_4_c_PR  0
+#define PROP_eg2tv_4_c_CC  64
+
+#define IMAGEFILE  "src/emu/eg2tv_4_c.png"
+purchase_sprites_with_icon(eg2tv_4_c, 18, 0, 3dc)
+MU_car_sprites(13, eg2tv_4_c_v1_mu, 32, 40)
+MU_car_sprites(13, eg2tv_4_c_v2_mu, 32, 308)
+MU_car_sprites(13, eg2tv_4_c_v3_mu, 32, 576)
+MU_car_sprites(13, eg2tv_4_c_v4_mu, 32, 844)
+#undef IMAGEFILE
+
+MU_power_dir_template2(eg2tv_4_c_v1, eg2tv_4_h, eg2tv_3_h)
+MU_power_dir_template2(eg2tv_4_c_v2, eg2tv_4_h, eg2tv_3_h)
+MU_power_dir_template2(eg2tv_4_c_v3, eg2tv_4_h, eg2tv_3_h)
+MU_power_dir_template2(eg2tv_4_c_v4, eg2tv_4_h, eg2tv_3_h)
+
+switch (FEAT_TRAINS, SELF, eg2tv_4_c_direction_left,
+  cargo_subtype)
+{
+  0: eg2tv_4_c_v1_direction_left;
+  1: eg2tv_4_c_v2_direction_left;
+  2: eg2tv_4_c_v3_direction_left;
+  3: eg2tv_4_c_v4_direction_left;
+  align_13_sprites;
+}
+
+switch (FEAT_TRAINS, SELF, eg2tv_4_c_direction_right,
+  cargo_subtype)
+{
+  0: eg2tv_4_c_v1_direction_right;
+  1: eg2tv_4_c_v2_direction_right;
+  2: eg2tv_4_c_v3_direction_right;
+  3: eg2tv_4_c_v4_direction_right;
+  align_13_sprites;
+}
+
+EMU_4_12_c_template(eg2tv_4)
+EMU_direction_calculation_template2set(eg2tv_4_c, eg2tv_4_h, eg2tv_4_m, eg2tv_4_c, eg2tv_3_h, eg2tv_3_m, eg2tv_3_c)
+EMU_4_12_free_attach_wagon_icon_template(eg2tv_4_c)
+EMU_count_calculation_template2set(eg2tv_4_c_next, eg2tv_4_h, eg2tv_4_m, eg2tv_4_c, eg2tv_3_h, eg2tv_3_m, eg2tv_3_c)
+MU_attach_wagon_icon_template2(eg2tv_4_c, eg2tv_4_h, eg2tv_3_h, type_car)
+long_vehicle_advanced(eg2tv_4_c, eg2tv_4_c_sprites_start_sp)
+
+engine_capacity_MU2(eg2tv_4_c, PROP_eg2tv_4_c_CC, eg2tv_4_h, eg2tv_3_h)
+
+RC_head_check2(eg2tv_4_c, eg2tv_4_h, eg2tv_3_h)
+switch (FEAT_TRAINS, SELF, eg2tv_4_c_running_cost_factor,
+  [ STORE_TEMP(110, 0),  // Моторы
+    STORE_TEMP(0, 1),    // Бригада
+    STORE_TEMP(38, 2),   // Износ
+    STORE_TEMP(0, 3),    // Сопровождение
+    STORE_TEMP(27, 4),   // ТО
+    STORE_TEMP(1, 5),    // Сертификация
+
+    STORE_TEMP(PROP_eg2tv_4_c_SD, 6),                                   // Скорость
+    STORE_TEMP(round(PROP_eg2tv_4_c_WT), 7),                            // Тара
+    STORE_TEMP(round(PROP_eg2tv_4_c_WT + PROP_eg2tv_4_c_CC / 16), 8)])  // Максимальная масса
+{ eg2tv_4_c_check_running_cost_factor; }                                // 176
+
+name_in_group_subgroup(eg2tv_4_c,
+  string(STR_NAME_IN_GROUP, string(STR_NAME_EG2TV_SERIES), string(STR_NAME_EG2TV_4_C)),
+  string(STR_NAME_IN_GROUP, string(STR_NAME_EG2TV_SERIES), string(STR_LONGNAME_EG2TV_4_C)),
+  string(STR_NAME_EG2TV_4))
+
+hint_MU_noto(eg2tv_4_c,
+  calc_loading(PROP_eg2tv_4_c_CC / (3 * WIDERST_D_DOOR)),
+  get_CAP_in_cb(CAP_00075_ACCELERATED),
+  STR_PURCHASE_HINT_ENGINE_TYPE_EMU_C_DC,
+  STR_SECTIONS_EMU_IVOLGA_4_12,
+  2024,
+  fact_tver())
+
+item (FEAT_TRAINS, eg2tv_4_c, 1356) {
+  property {
+    name: string(STR_NAME_EG2TV_4_C);
+    vehicle_dates(2024, 2050, 40, 10, 8, PROP_eg2tv_4_c_CF)
+    vehicle_emu_wagon(dc, PROP_eg2tv_4_c_WT, PROP_eg2tv_4_c_CC, 3 * WIDERST_D_DOOR, )
+    vehicle_group_mu(eg2tv_4_h)
+  }
+  graphics {
+    purchase_menu_wagon(PROP_eg2tv_4_c_CF, PROP_eg2tv_4_c_RC, PROP_eg2tv_4_c_SD, PROP_eg2tv_4_c_WT, PROP_eg2tv_4_c_TE, PROP_eg2tv_4_c_PR, PROP_eg2tv_4_c_CC)
+        additional_text: eg2tv_4_c_additional_text;
+       articulated_part: articulated_part_dummy5;
+       can_attach_wagon: eg2tv_4_can_attach_wagon;
+       cargo_age_period: return get_CAP_in_cb(CAP_00075_ACCELERATED);
+         cargo_capacity: eg2tv_4_c_cargo_capacity;
+     cargo_subtype_text: eg2tv_4_cargo_subtype_text;
+         colour_mapping: any_cc_colour;
+                default: eg2tv_4_c_sprites;
+                   name: eg2tv_4_c_name;
+                  power: return 0;
+               purchase: eg2tv_4_c_purchase_sprites;
+    running_cost_factor: eg2tv_4_c_running_cost_factor;
+                  speed: return PROP_eg2tv_4_c_SD;
+             start_stop: return string(STR_START_STOP_HEAD_REQUIRED);
+  }
+}
+
+long_name_template(eg2tv_4_c, STR_LONGNAME_EG2TV_4_C)
+allow_dcemu(eg2tv_4_c)

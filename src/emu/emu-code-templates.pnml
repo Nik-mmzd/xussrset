@@ -25,6 +25,12 @@ switch (FEAT_TRAINS, SELF, speed_after40_130to110,
   return 130;
 }
 
+// Таблицы ориентации ниже перечисляют только те порядки вагонов, которые допускала
+// схема 4, 6-12. Свободная схема (EMU_4_12_free_*) разрешает и другие, например
+// Г-П-М-М-Г: такой вагон попадает в ветку по умолчанию и рисуется в левой ориентации,
+// то есть пантографы смотрят в одну сторону. Это косметика, а не ошибка отрисовки;
+// счётный аналог направления вместо таблицы намеренно не сделан.
+
 // шаблон ориентации прицепного вагона
 #define EMU_4_12_c_template(name)                                       \
 switch (FEAT_TRAINS, SELF, name##_c_direction_max, LOAD_TEMP(5))        \
@@ -408,6 +414,20 @@ switch (FEAT_TRAINS, PARENT, name##_can_attach_wagon_max, LOAD_TEMP(5))         
   0xA15A: name##_can_attach_wagon_motor;         /* Г-М-П-М-П-М-М-П-М-П-(М)   */                                         \
   0xB2B5: name##_can_attach_wagon_head;          /* Г-М-П-М-П-М-М-П-М-П-М-(Г) */                                         \
   return string(STR_CAN_ATTACH_OTHERCAR_ONLY); }                                                                         \
+
+// 4-12 вагонов любой длины (в том числе нечётной): две немоторные головы по концам,
+// внутри моторные и прицепные в любом порядке, моторных не меньше двух и не меньше,
+// чем прицепных. Работает на счётчиках из EMU_count_calculation_template2set,
+// поэтому перебор всех сочетаний не нужен.
+#define EMU_4_12_free_can_attach_wagon_template2set(name, vehid1_h, vehid1_m, vehid1_c, vehid2_h, vehid2_m, vehid2_c)  \
+EMU_4_12_can_attach_wagon_errors_template2set(name, vehid1_h, vehid1_m, vehid1_c, vehid2_h, vehid2_m, vehid2_c)        \
+switch (FEAT_TRAINS, PARENT, name##_can_attach_wagon_max,                                                             \
+  EMU_4_12_free_choice())                                                                                             \
+{ 7: name##_can_attach_wagon_base;         /* Г/М/П */                                                                \
+  4: name##_can_attach_wagon_head;         /* Г     */                                                                \
+  3: name##_can_attach_wagon_not_head;     /* М/П   */                                                                \
+  2: name##_can_attach_wagon_motor;        /* М     */                                                                \
+  return string(STR_CAN_ATTACH_OTHERCAR_ONLY); }                                                                      \
 
 #define EMU_4681012_can_attach_wagon_template(name, name_h, name_m, name_c)           \
 EMU_4_12_can_attach_wagon_errors_template(name, name_h, name_m, name_c)               \
