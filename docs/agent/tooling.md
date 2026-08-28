@@ -24,7 +24,7 @@ Also needs `git` (for `git describe`), `gcc`, `nmlc`.
 Twelve near-identical copies (`compile.bat` = combined, `compile-<mod>.bat`
 per module, `compile-all.bat` chains them). Encoded in **CP866** — read via
 `iconv -f CP866`. Config comes from `..\config.bat` (one level **above** the
-repo root; sample: `config.bat.sample`; expects MinGW gcc and NML 0.7.5).
+repo root; sample: `config.bat.sample`; expects MinGW gcc and NML >= 0.7.6).
 
 The `.bat` flow does more than `compile.sh`:
 

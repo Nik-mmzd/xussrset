@@ -17,7 +17,7 @@ goto :EOF
 
 :: путь к MinGW
 set PATHMINGW=C:\MinGW\msys\1.0\bin;C:\MinGW\bin
-:: путь к NML 0.7.5
+:: путь к NML 0.7.6
 set PATHNML=f:\Utils\nml
 :: путь к архиватору 7-Zip
 set PATH7Z=C:\Program Files\7-Zip

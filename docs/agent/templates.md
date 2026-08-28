@@ -45,6 +45,12 @@ Global constants and property-block macros (~150 defines):
   `vehicle_emu_c`, `vehicle_wagon`, `vehicle_pass()`, `vehicle_group*`,
   `group_steam/electric/wagon`, and `purchase_menu*` (which applies
   `costs_multiplier` / `rcosts_multiplier`).
+- **pricing is callback-only**: `vehicle_dates`/`vehicle_no_dates` hard-code
+  the `cost_factor` *property* to 1 (the argument is commented out); the real
+  purchase price lives solely in the CB36 callback emitted by
+  `purchase_menu()`. A vehicle whose callback chain is missing or broken
+  shows the engine base price × 1 (~124k credits) in the buy menu — that
+  price is the diagnostic signature of a lost `cost_factor:` wiring.
 
 `src/definition-cross.pnml` is narrow: hard-coded cross-module consist
 validation for real hybrid trains (TEP70BS+ES1/ES2G, 2M62U+DR1A), with vehicle

@@ -65,7 +65,13 @@ MU_head_sprites(12, er2_h_v1_mu, 32, 40)
   `scripts/clean-lng.pl` scrapes exactly this form.
 - Sheet geometry must match the blank artist template in
   `src/align/templates/` for the macro being called (`mu_head.png`,
-  `steamer.png`, `diesel1.png`, `wagon-tanker.png`, …).
+  `steamer.png`, `diesel1.png`, `wagon-tanker.png`, …). MU sheets stack
+  268-px paint bands at y = 40 / 308 / 576 / 844 (purchase strip at y 0–17).
+- Inside each sprite cell, align new art with the SAME family's existing
+  sheets, not with other families: ground-row conventions differ per family
+  (e.g. Ivolga cars sit at cell rows 18–39 while ЭД4М sits at 19–40), and a
+  1-px offset against the vehicle's own siblings renders as a visible step
+  between cars of one consist.
 - The first macro argument of body templates is the vehicle length `n`, mapped
   to `sN_template` slots from `src/template.pnml`.
 
