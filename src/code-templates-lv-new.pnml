@@ -71,6 +71,10 @@ livery_subtemplate(STR_REFIT_LV_SUBWAY_KIEV, 1960)
 livery_subtemplate(STR_REFIT_LV_SUBWAY_BAKU, 1967)
 livery_subtemplate(STR_REFIT_LV_SUBWAY_TASHKENT, 1977)
 livery_subtemplate(STR_REFIT_LV_SUBWAY_KHARKIV, 1975)
+livery_subtemplate(STR_REFIT_LV_SUBWAY_NOVOSIBIRSK, 2024)
+livery_subtemplate(STR_REFIT_LV_SUBWAY_SPB_LINE2, 2022)
+livery_subtemplate(STR_REFIT_LV_SUBWAY_SPB_LINE5, 2022)
+livery_subtemplate(STR_REFIT_LV_SUBWAY_SPB_LINE6, 2022)
 
 livery_subtemplate_long(STR_REFIT_LV_RED_ARROW_OLD, STR_REFIT_LV_RED_ARROW_LONG, 1931)
 livery_subtemplate_long(STR_REFIT_LV_BLUE_EXPRESS, STR_REFIT_LV_BLUE_EXPRESS_LONG, 1947)
@@ -257,6 +261,10 @@ switch (FEAT_TRAINS, SELF, general_cargo_subtype_text0, cargo_subtype)
                LV_SUBWAY_KHARKIV: general_cargo_subtype_text_STR_REFIT_LV_SUBWAY_KHARKIV;
                   LV_SUBWAY_BAKU: general_cargo_subtype_text_STR_REFIT_LV_SUBWAY_BAKU;
               LV_SUBWAY_TASHKENT: general_cargo_subtype_text_STR_REFIT_LV_SUBWAY_TASHKENT;
+           LV_SUBWAY_NOVOSIBIRSK: general_cargo_subtype_text_STR_REFIT_LV_SUBWAY_NOVOSIBIRSK;
+             LV_SUBWAY_SPB_LINE2: general_cargo_subtype_text_STR_REFIT_LV_SUBWAY_SPB_LINE2;
+             LV_SUBWAY_SPB_LINE5: general_cargo_subtype_text_STR_REFIT_LV_SUBWAY_SPB_LINE5;
+             LV_SUBWAY_SPB_LINE6: general_cargo_subtype_text_STR_REFIT_LV_SUBWAY_SPB_LINE6;
           LV_BCH_TCH1_MINSK_SORT: general_cargo_subtype_text_STR_REFIT_LV_BCH_TCH1_MINSK_SORT;
          LV_RZD_TCH11_MOSCOW_III: general_cargo_subtype_text_STR_REFIT_LV_RZD_TCH11_MOSCOW_III;
       LV_RZD_TCH11_TIMASHEVSKAYA: general_cargo_subtype_text_STR_REFIT_LV_RZD_TCH11_TIMASHEVSKAYA;

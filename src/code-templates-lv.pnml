@@ -116,8 +116,11 @@
 #define LV_SUBWAY_YEKATERINBURG                 151
 #define LV_SUBWAY_EREVAN                        152
 #define LV_SUBWAY_SAMARA                        153
+#define LV_SUBWAY_SPB_LINE2                     154
 #define LV_SUBWAY_ALMAATA                       155
 #define LV_SUBWAY_DNIPRO                        156
+#define LV_SUBWAY_SPB_LINE5                     157
+#define LV_SUBWAY_SPB_LINE6                     158
 
 // train depots
 

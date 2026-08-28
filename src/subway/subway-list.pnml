@@ -63,3 +63,7 @@
 #include "81-776_m.pnml"
 #include "81-777_c_use.pnml"
 #include "81-775-group.pnml"
+#include "81-725_h.pnml"
+#include "81-726_m.pnml"
+#include "81-727_c_use.pnml"
+#include "81-725-group.pnml"
