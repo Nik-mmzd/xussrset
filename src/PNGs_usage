@@ -664,7 +664,7 @@ src/electric/fp.png -> (src/electric/fp.pnml)
 src/electric/industrial/el1.png -> (src/electric/industrial/el1.pnml)
 src/electric/industrial/el2.png -> (src/electric/industrial/el2.pnml)
 src/electric/industrial/el21.png -> (src/electric/industrial/el21.pnml)
-src/electric/industrial/npm2.png -> 
+src/electric/industrial/npm2.png -> (src/electric/industrial/npm2.pnml)
 src/electric/industrial/pe150_c.png -> (src/electric/industrial/pe150.pnml)
 src/electric/industrial/pe150_h.png -> (src/electric/industrial/pe150.pnml)
 src/electric/industrial/pe2.png -> (src/electric/industrial/pe2.pnml)

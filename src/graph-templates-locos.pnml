@@ -304,6 +304,61 @@ random_switch (FEAT_TRAINS, SELF, name##_sprites_left,                          
 
 // 1-осекционный несимметричный электровоз с 1 пантографом несимметричный или с 2 пантографами, из которых поднят только 1 задний
 // #define IMAGEFILE "src/align/templates/electric1-1.png" #undef IMAGEFILE
+#define electric1r_1_sprites(n, name, x, y)                                           \
+spriteset (name##_notpowered_sprites_left, IMAGEFILE)                                 \
+{ s##n##_template(x, y, 0) }                                                          \
+spriteset (name##_notpowered_up_sprites_left, IMAGEFILE)                              \
+{ s##n##_template(x, y+67, 0) }                                                       \
+spriteset (name##_loading_sprites_left, IMAGEFILE)                                    \
+{ s##n##_template(x, y+134, 0) }                                                      \
+spriteset (name##_traveling_sprites_left, IMAGEFILE)                                  \
+{ s##n##_template(x, y+201, 0) }                                                      \
+spriteset (name##_notpowered_sprites_right, IMAGEFILE)                                \
+{ s##n##_r_template(x, y, 0) }                                                        \
+spriteset (name##_notpowered_up_sprites_right, IMAGEFILE)                             \
+{ s##n##_r_template(x, y+67, 0) }                                                     \
+spriteset (name##_loading_sprites_right, IMAGEFILE)                                   \
+{ s##n##_r_template(x+415, y+134, 0) }                                                \
+spriteset (name##_traveling_sprites_right, IMAGEFILE)                                 \
+{ s##n##_r_template(x+415, y+201, 0) }                                                \
+spritegroup name##_regular_sprites_left                                               \
+{ loading: name##_loading_sprites_left;                                               \
+   loaded: name##_traveling_sprites_left; }                                           \
+spritegroup name##_regular_sprites_right                                              \
+{ loading: name##_loading_sprites_right;                                              \
+   loaded: name##_traveling_sprites_right; }                                          \
+switch (FEAT_TRAINS, SELF, name##_sprites_left3,                                      \
+  position_in_consist == 0)                                                           \
+{ 1: name##_regular_sprites_left;                                                     \
+  name##_notpowered_up_sprites_left; }                                                \
+switch (FEAT_TRAINS, SELF, name##_sprites_left2,                                      \
+  vehicle_is_not_powered || vehicle_is_in_depot)                                      \
+{ 1: name##_notpowered_sprites_left;                                                  \
+  name##_sprites_left3; }                                                             \
+random_switch (FEAT_TRAINS, SELF, name##_sprites_left1,                               \
+  bitmask(TRIGGER_VEHICLE_SERVICE))                                                   \
+{ 1: name##_sprites_left2;                                                            \
+  1: name##_sprites_left2; }                                                          \
+random_switch (FEAT_TRAINS, SELF, name##_sprites_left,                                \
+  bitmask(TRIGGER_VEHICLE_UNLOAD_ALL, TRIGGER_VEHICLE_ANY_LOAD, TRIGGER_ALL_NEEDED))  \
+{ independent: name##_sprites_left1;                                                  \
+          128: name##_sprites_left1; }                                                \
+switch (FEAT_TRAINS, SELF, name##_sprites_right3,                                     \
+  position_in_consist == 0)                                                           \
+{ 1: name##_regular_sprites_right;                                                    \
+  name##_notpowered_up_sprites_right; }                                               \
+switch (FEAT_TRAINS, SELF, name##_sprites_right2,                                     \
+  vehicle_is_not_powered || vehicle_is_in_depot)                                      \
+{ 1: name##_notpowered_sprites_right;                                                 \
+  name##_sprites_right3; }                                                            \
+random_switch (FEAT_TRAINS, SELF, name##_sprites_right1,                              \
+  bitmask(TRIGGER_VEHICLE_SERVICE))                                                   \
+{ 1: name##_sprites_right2;                                                           \
+  1: name##_sprites_right2; }                                                         \
+random_switch (FEAT_TRAINS, SELF, name##_sprites_right,                               \
+  bitmask(TRIGGER_VEHICLE_UNLOAD_ALL, TRIGGER_VEHICLE_ANY_LOAD, TRIGGER_ALL_NEEDED))  \
+{ independent: name##_sprites_right1;                                                 \
+          128: name##_sprites_right1; }                                               \
 
 // 1-осекционный симметричный электровоз с 2 пантографами
 // #define IMAGEFILE "src/align/templates/electric1-2_sim.png" #undef IMAGEFILE

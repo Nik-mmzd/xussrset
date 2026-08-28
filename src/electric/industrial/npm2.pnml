@@ -1,0 +1,82 @@
+// npm2
+
+// Cost and running cost scale PE2 (2 * 13 / 41) by the power and mass ratios, which
+// agree closely: 1400 / 1830 kW = 0.77 and 92 / 120 t = 0.77.
+#define PROP_npm2_CF  2 * 10
+#define PROP_npm2_RC  31
+#define PROP_npm2_SD  60
+#define PROP_npm2_WT  92
+// PE2 tractive effort scaled by mass: 227 * 92 / 120
+#define PROP_npm2_TE  174.0
+#define PROP_npm2_PR  kw2hp(1400)
+#define PROP_npm2_CC  0
+
+// 1,5 kV DC. The PE2 motor dump cars sit on the dual-DC railtype, but the two
+// families list each other in their powered_railtype_list, so the dump cars keep both
+// their power and their depot availability behind this locomotive.
+
+#define IMAGEFILE  "src/electric/industrial/npm2.png"
+purchase_sprites_with_icon(npm2, 18, 0, 15dc)
+electric1r_1_sprites(8, npm2, 32, 40)
+#undef IMAGEFILE
+
+engine_direction_template(npm2, npm2)
+long_vehicle(npm2)
+
+engine_electric1_1_effect(npm2_create_effect, 0)
+engine_speed(npm2, PROP_npm2_SD)
+engine_penalise_speed0(npm2)
+
+switch (FEAT_TRAINS, SELF, npm2_running_cost_factor,
+  [ STORE_TEMP(18, 0),  // Моторы
+    STORE_TEMP(2, 1),   // Бригада
+    STORE_TEMP(6, 2),   // Износ
+    STORE_TEMP(0, 3),   // Сопровождение
+    STORE_TEMP(5, 4),   // ТО
+    STORE_TEMP(0, 5),   // Сертификация
+
+    STORE_TEMP(PROP_npm2_SD, 6),          // Скорость
+    STORE_TEMP(round(PROP_npm2_WT), 7),   // Тара
+    STORE_TEMP(round(PROP_npm2_WT), 8)])  // Максимальная масса
+{ all_running_cost_factor; }              // 31
+
+name_in_group(npm2,
+  string(STR_NAME_IN_GROUP, string(STR_NAME_NPM2_SERIES), string(STR_NAME_NPM2)),
+  string(STR_NAME_IN_GROUP, string(STR_NAME_NPM2_SERIES), string(STR_LONGNAME_NPM2)))
+
+hint_engine(npm2,
+  STR_PURCHASE_HINT_ENGINE_TYPE_INDUSTRIAL_ELECTRIC_15DC,
+  STR_PURCHASE_HINT_SECTIONS_1_WITH_DUMPCARS,
+  2003, 2012,
+  fact_novocherkassk())
+
+item (FEAT_TRAINS, npm2, 1358) {
+  property {
+    name: string(STR_NAME_NPM2);
+    vehicle_dates(2003, 2012, 40, 10, 7, PROP_npm2_CF)
+    vehicle_cargo()
+    vehicle_15dcelectric(PROP_npm2_PR, PROP_npm2_WT, PROP_npm2_TE, _lowspeed)
+    vehicle_group(group_npm2)
+  }
+  graphics {
+    purchase_menu(PROP_npm2_CF, PROP_npm2_RC, PROP_npm2_SD, PROP_npm2_WT, PROP_npm2_TE, PROP_npm2_PR, PROP_npm2_CC)
+         additional_text: npm2_additional_text;
+        articulated_part: articulated_part_dummy1;
+    bitmask_vehicle_info: npm2_bitmask_vehicle_info;
+        can_attach_wagon: any_can_attach_wagon_electric;
+          cargo_capacity: return PROP_npm2_CC;
+      cargo_subtype_text: pe_type_cargo_subtype_text;
+          colour_mapping: pe_type_colour_mapping;
+           create_effect: npm2_create_effect_left;
+                 default: npm2_sprites;
+                    name: npm2_name;
+                purchase: npm2_purchase_sprites;
+     running_cost_factor: npm2_running_cost_factor;
+                   speed: npm2_speed;
+              start_stop: any_start_stop_electric;
+  }
+}
+
+long_name_template(npm2, STR_LONGNAME_NPM2)
+models_default_cargo_template_industrial(npm2)
+allow_dcelectric(npm2)

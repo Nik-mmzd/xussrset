@@ -354,6 +354,8 @@ switch (FEAT_TRAINS, PARENT, pe2_for_pwd_dumpcar_required2,
           pe2: double_can_attach_wagon_electric;
          pe2m: double_can_attach_wagon_electric;
          pe2u: double_can_attach_wagon_electric;
+         npm2: double_can_attach_wagon_electric;
+        npm2m: double_can_attach_wagon_electric;
   pwd_dumpcar: pe2_for_pwd_dumpcar_required3;
   return string(STR_START_STOP_POWER_UNIT_REQUIRED);
 }
@@ -365,6 +367,8 @@ switch (FEAT_TRAINS, PARENT, pe2_for_pwd_dumpcar_required,
           pe2: double_can_attach_wagon_electric;
          pe2m: double_can_attach_wagon_electric;
          pe2u: double_can_attach_wagon_electric;
+         npm2: double_can_attach_wagon_electric;
+        npm2m: double_can_attach_wagon_electric;
   pwd_dumpcar: pe2_for_pwd_dumpcar_required2;
   return string(STR_START_STOP_POWER_UNIT_REQUIRED);
 }
@@ -372,7 +376,9 @@ switch (FEAT_TRAINS, PARENT, pe2_for_pwd_dumpcar_required,
 switch (FEAT_TRAINS, PARENT, other_can_attach_wagon_electric,
   [ set_offset_to(num_vehs_in_consist-2),
     ( all_mid_section_electric() +
-      (((prev_vehicle_type_id() == pwd_dumpcar) && (!((LOAD_TEMP(5) == pe2) || (LOAD_TEMP(5) == pe2u) || (LOAD_TEMP(5) == pe2m)))) * 2)) ])
+      (((prev_vehicle_type_id() == pwd_dumpcar) &&
+        (!((LOAD_TEMP(5) == pe2) || (LOAD_TEMP(5) == pe2u) || (LOAD_TEMP(5) == pe2m) ||
+          (LOAD_TEMP(5) == npm2) || (LOAD_TEMP(5) == npm2m)))) * 2)) ])
 {
   1: return string(STR_CAN_ATTACH_NO_AFTER_MIDDLE_UNIT);
   2: pe2_for_pwd_dumpcar_required;
@@ -535,11 +541,14 @@ switch (FEAT_TRAINS, PARENT, m_pwd_dumpcar_can_attach_wagon4,
   return string(STR_START_STOP_POWER_UNIT_REQUIRED);
 }
 
+// третий думпкар подряд тянет только ПЭ2: у НПМ2 их не больше двух
 switch (FEAT_TRAINS, PARENT, m_pwd_dumpcar_can_attach_wagon3,
   [ set_offset_to(num_vehs_in_consist-6),
     prev_vehicle_type_id()])
 {
   pwd_dumpcar: m_pwd_dumpcar_can_attach_wagon4;
+         npm2: return string(STR_START_STOP_POWER_UNIT_REQUIRED);
+        npm2m: return string(STR_START_STOP_POWER_UNIT_REQUIRED);
   double_can_attach_wagon_electric;
 }
 

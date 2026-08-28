@@ -893,6 +893,9 @@ STR_LONGNAME_N8_TYPE1955          :Электровоз Н8-009
 STR_LONGNAME_N8_TYPE1956          :Электровоз Н8-019
 STR_LONGNAME_N8_TYPE1957          :Электровоз Н8-042
 STR_LONGNAME_N8_TYPE1959          :Электровоз Н8-1201
+STR_LONGNAME_NPM2                 :Промышленный электровоз НПМ2
+STR_LONGNAME_NPM2M                :Промышленный электровоз НПМ2М
+STR_LONGNAME_NPM2_SERIES          :Серия промышленных электровозов НПМ2
 STR_LONGNAME_N_O                  :Электровоз Н-О
 STR_LONGNAME_PE150                :Промышленный электровоз ПЭ150
 STR_LONGNAME_PE2                  :Промышленный электровоз ПЭ2
@@ -1104,6 +1107,9 @@ STR_NAME_N8_TYPE1955              :Н8-009
 STR_NAME_N8_TYPE1956              :Н8-019
 STR_NAME_N8_TYPE1957              :Н8-042
 STR_NAME_N8_TYPE1959              :Н8-1201
+STR_NAME_NPM2                     :НПМ2
+STR_NAME_NPM2M                    :НПМ2М
+STR_NAME_NPM2_SERIES              :Серия НПМ2
 STR_NAME_N_O                      :Н-О
 STR_NAME_PE150                    :ПЭ150
 STR_NAME_PE2                      :ПЭ2
@@ -2434,6 +2440,7 @@ STR_PURCHASE_HINT_SECTIONS_1_2_WITH_ATTACH            :до 2-х секций, �
 STR_PURCHASE_HINT_SECTIONS_1_3                        :до 3-х секций
 STR_PURCHASE_HINT_SECTIONS_1_4                        :до 4-х секций
 STR_PURCHASE_HINT_SECTIONS_1_4_WITH_ATTACH            :до 4-х секций, можно присоединять {PUSH_COLOUR}{WHITE}{STRING}{POP_COLOUR}
+STR_PURCHASE_HINT_SECTIONS_1_WITH_DUMPCARS            :Только 1 секция, можно присоединить до двух моторных думпкаров
 STR_PURCHASE_HINT_SECTIONS_2                          :только в 2 секции
 STR_PURCHASE_HINT_SECTIONS_2_4                        :от 2-х до 4-х секций
 STR_PURCHASE_HINT_SECTIONS_2_4_WITH_ATTACH            :от 2-х до 4-х секций, можно присоединять {PUSH_COLOUR}{WHITE}{STRING}{POP_COLOUR}

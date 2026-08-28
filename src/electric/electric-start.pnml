@@ -287,8 +287,10 @@ switch (FEAT_TRAINS, PARENT, any_start_stop_mid_electric,
 
 // Моторные думпкары
 
+// ПЭ2 тянет три думпкара, НПМ2 - два, поэтому его нет в проверках на третий
 switch (FEAT_TRAINS, PARENT, any_start_stop_pwdd_total,
-  (count_veh_id(pe2) + count_veh_id(pe2m) + count_veh_id(pe2u)) * 3 -
+  (count_veh_id(pe2) + count_veh_id(pe2m) + count_veh_id(pe2u)) * 3 +
+  (count_veh_id(npm2) + count_veh_id(npm2m)) * 2 -
   count_veh_id(pwd_dumpcar) >= 0)
 {
   1: any_start_stop_mid_electric;
@@ -313,6 +315,8 @@ switch (FEAT_TRAINS, PARENT, any_start_stop_pwdd3,
           pe2: any_start_stop_pwdd_total;
          pe2m: any_start_stop_pwdd_total;
          pe2u: any_start_stop_pwdd_total;
+         npm2: any_start_stop_pwdd_total;
+        npm2m: any_start_stop_pwdd_total;
   return string(STR_START_STOP_POWER_UNIT_REQUIRED);
 }
 
@@ -324,6 +328,8 @@ switch (FEAT_TRAINS, PARENT, any_start_stop_pwdd2,
           pe2: any_start_stop_pwdd_total;
          pe2m: any_start_stop_pwdd_total;
          pe2u: any_start_stop_pwdd_total;
+         npm2: any_start_stop_pwdd_total;
+        npm2m: any_start_stop_pwdd_total;
   return string(STR_START_STOP_POWER_UNIT_REQUIRED);
 }
 
@@ -337,7 +343,8 @@ switch (FEAT_TRAINS, PARENT, any_start_stop_pwdd1,
 
 switch (FEAT_TRAINS, PARENT, any_start_stop_pwdd,
   (count_veh_id(pwd_dumpcar) > 0) * 2 +
-  ((count_veh_id(pe2) == 0) && (count_veh_id(pe2m) == 0) && (count_veh_id(pe2u) == 0)))
+  ((count_veh_id(pe2) == 0) && (count_veh_id(pe2m) == 0) && (count_veh_id(pe2u) == 0) &&
+    (count_veh_id(npm2) == 0) && (count_veh_id(npm2m) == 0)))
 {
   3: return string(STR_START_STOP_POWER_UNIT_REQUIRED);
   2: any_start_stop_pwdd1;

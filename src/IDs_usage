@@ -1231,3 +1231,6 @@
 1354 -> eg2tv_4_h (src/emu/eg2tv_4_h.pnml)
 1355 -> eg2tv_4_m (src/emu/eg2tv_4_m.pnml)
 1356 -> eg2tv_4_c (src/emu/eg2tv_4_c.pnml)
+1357 -> group_npm2 (src/electric/industrial/npm2-group.pnml)
+1358 -> npm2 (src/electric/industrial/npm2.pnml)
+1359 -> npm2m (src/electric/industrial/npm2m_use.pnml)

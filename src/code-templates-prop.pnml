@@ -732,6 +732,20 @@ switch (FEAT_TRAINS, SELF, name##_power, position_in_consist == 0)     \
 { 1: return get_power_in_cb(power);                                    \
   name##_power2; }                                                     \
 
+#define engine_power_MU6(name, power, vehid1, vehid2, vehid3, vehid4, vehid5, vehid6)  \
+switch (FEAT_TRAINS, PARENT, name##_power2,                                            \
+  (vehicle_type_id == vehid1) ||                                                       \
+  (vehicle_type_id == vehid2) ||                                                       \
+  (vehicle_type_id == vehid3) ||                                                       \
+  (vehicle_type_id == vehid4) ||                                                       \
+  (vehicle_type_id == vehid5) ||                                                       \
+  (vehicle_type_id == vehid6))                                                         \
+{ 1: return get_power_in_cb(power);                                                    \
+  return 0; }                                                                          \
+switch (FEAT_TRAINS, SELF, name##_power, position_in_consist == 0)                     \
+{ 1: return get_power_in_cb(power);                                                    \
+  name##_power2; }                                                                     \
+
 // Определение мощности в зависимости от типа пути
 
 #define engine_0_power(name)                                   \

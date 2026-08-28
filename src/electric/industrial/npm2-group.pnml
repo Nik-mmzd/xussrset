@@ -1,0 +1,18 @@
+// npm2 group
+
+group_props1(group_npm2,
+  npm2,
+  npm2m, 2013)
+
+item (FEAT_TRAINS, group_npm2, 1357) {
+  property {
+    name: string(STR_NAME_NPM2_SERIES);
+    group_electric(15dc, 2003, 10)
+  }
+  graphics {
+    group_CBs(group_npm2)
+    colour_mapping: pe_type_colour_mapping;
+  }
+}
+
+long_name_template(group_npm2, STR_LONGNAME_NPM2_SERIES)

@@ -1,0 +1,75 @@
+// npm2m uses npm2
+
+// NPM2M differs from NPM2 in its electronics only, the body and the ratings are identical.
+#define PROP_npm2m_CF  PROP_npm2_CF
+#define PROP_npm2m_RC  PROP_npm2_RC
+#define PROP_npm2m_SD  PROP_npm2_SD
+#define PROP_npm2m_WT  PROP_npm2_WT
+#define PROP_npm2m_TE  PROP_npm2_TE
+#define PROP_npm2m_PR  PROP_npm2_PR
+#define PROP_npm2m_CC  PROP_npm2_CC
+
+map_sprites(npm2m_purchase_sprites, npm2_purchase_sprites)
+map_sprites(npm2m_sprites_left, npm2_sprites_left)
+map_sprites(npm2m_sprites_right, npm2_sprites_right)
+
+engine_direction_template(npm2m, npm2m)
+long_vehicle(npm2m)
+
+engine_electric1_1_effect(npm2m_create_effect, 0)
+engine_speed(npm2m, PROP_npm2m_SD)
+engine_penalise_speed0(npm2m)
+
+switch (FEAT_TRAINS, SELF, npm2m_running_cost_factor,
+  [ STORE_TEMP(18, 0),  // Моторы
+    STORE_TEMP(2, 1),   // Бригада
+    STORE_TEMP(6, 2),   // Износ
+    STORE_TEMP(0, 3),   // Сопровождение
+    STORE_TEMP(5, 4),   // ТО
+    STORE_TEMP(0, 5),   // Сертификация
+
+    STORE_TEMP(PROP_npm2m_SD, 6),          // Скорость
+    STORE_TEMP(round(PROP_npm2m_WT), 7),   // Тара
+    STORE_TEMP(round(PROP_npm2m_WT), 8)])  // Максимальная масса
+{ all_running_cost_factor; }               // 31
+
+name_in_group(npm2m,
+  string(STR_NAME_IN_GROUP, string(STR_NAME_NPM2_SERIES), string(STR_NAME_NPM2M)),
+  string(STR_NAME_IN_GROUP, string(STR_NAME_NPM2_SERIES), string(STR_LONGNAME_NPM2M)))
+
+hint_engine_noto(npm2m,
+  STR_PURCHASE_HINT_ENGINE_TYPE_INDUSTRIAL_ELECTRIC_15DC,
+  STR_PURCHASE_HINT_SECTIONS_1_WITH_DUMPCARS,
+  2013,
+  fact_novocherkassk())
+
+item (FEAT_TRAINS, npm2m, 1359) {
+  property {
+    name: string(STR_NAME_NPM2M);
+    vehicle_dates(2013, 2050, 40, 10, 7, PROP_npm2m_CF)
+    vehicle_cargo()
+    vehicle_15dcelectric(PROP_npm2m_PR, PROP_npm2m_WT, PROP_npm2m_TE, _lowspeed)
+    vehicle_group(group_npm2)
+  }
+  graphics {
+    purchase_menu(PROP_npm2m_CF, PROP_npm2m_RC, PROP_npm2m_SD, PROP_npm2m_WT, PROP_npm2m_TE, PROP_npm2m_PR, PROP_npm2m_CC)
+         additional_text: npm2m_additional_text;
+        articulated_part: articulated_part_dummy1;
+    bitmask_vehicle_info: npm2m_bitmask_vehicle_info;
+        can_attach_wagon: any_can_attach_wagon_electric;
+          cargo_capacity: return PROP_npm2m_CC;
+      cargo_subtype_text: pe_type_cargo_subtype_text;
+          colour_mapping: pe_type_colour_mapping;
+           create_effect: npm2m_create_effect_left;
+                 default: npm2m_sprites;
+                    name: npm2m_name;
+                purchase: npm2m_purchase_sprites;
+     running_cost_factor: npm2m_running_cost_factor;
+                   speed: npm2m_speed;
+              start_stop: any_start_stop_electric;
+  }
+}
+
+long_name_template(npm2m, STR_LONGNAME_NPM2M)
+models_default_cargo_template_industrial(npm2m)
+allow_dcelectric(npm2m)

@@ -65,9 +65,9 @@ switch (FEAT_TRAINS, SELF, pwd_dumpcar_loading_speed,
   all_wagons_bulk_loading_speed;
 }
 
-// because we can't check the sequence in power CB, power is disabled when the head locomotive is not PE2*
-engine_power_MU4(pwd_dumpcar_15DC, PROP_pwd_dumpcar_PR_15KV, pwd_dumpcar, pe2, pe2m, pe2u)
-engine_power_MU4(pwd_dumpcar_DC, PROP_pwd_dumpcar_PR, pwd_dumpcar, pe2, pe2m, pe2u)
+// because we can't check the sequence in power CB, power is disabled when the head locomotive is not PE2* or NPM2*
+engine_power_MU6(pwd_dumpcar_15DC, PROP_pwd_dumpcar_PR_15KV, pwd_dumpcar, pe2, pe2m, pe2u, npm2, npm2m)
+engine_power_MU6(pwd_dumpcar_DC, PROP_pwd_dumpcar_PR, pwd_dumpcar, pe2, pe2m, pe2u, npm2, npm2m)
 engine_power_change_DDC(pwd_dumpcar)
 
 switch (FEAT_TRAINS, SELF, pwd_dumpcar_running_cost_factor,

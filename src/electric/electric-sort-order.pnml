@@ -4,6 +4,7 @@
     group_skoda13e, _13e, _21e, _21em,
     group_el1, el1, el2, el21,
     group_pe2, pwd_dumpcar, pe2, pe2m, pe2u,
+    group_npm2, npm2, npm2m,
 //  электровозы постоянного тока
 //    пассажирские
       group_chs1, chs1_24e0, chs1_41e,

@@ -204,4 +204,7 @@
 #include "industrial/pe2m_use.pnml"
 #include "industrial/pe2u_use.pnml"
 #include "industrial/pe2-group.pnml"
+#include "industrial/npm2.pnml"
+#include "industrial/npm2m_use.pnml"
+#include "industrial/npm2-group.pnml"
 #include "industrial/so.pnml"
